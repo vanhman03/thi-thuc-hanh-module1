@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Quản lý công nhân trong phân xưởng</h1>
+
+<script>
+    class CongNhan {
+        constructor(stt, hoTen, ngaySinh, diaChi, luong, chucVu) {
+            this.stt = stt;
+            this.hoTen = hoTen;
+            this.ngaySinh = ngaySinh;
+            this.diaChi = diaChi;
+            this.luong = luong;
+            this.chucVu = chucVu;
+        }
+
+        showInfo() {
+            return `STT: ${this.stt}, Họ tên: ${this.hoTen}, Ngày sinh: ${this.ngaySinh},
+            Địa chỉ: ${this.diaChi}, Lương: ${this.luong}, Chức vụ: ${this.chucVu}`;
+        }
+    }
+
+    const congNhan1 = new CongNhan(1, "Lại Văn Mạnh", "16/10/2003", "Đà Nẵng", 5000000, "Công nhân");
+    const congNhan2 = new CongNhan(2, "Lê Ngọc Quỳnh Mai", "12/09/2003", "Hải Phòng", 10000000, "Tổ trưởng");
+
+    document.write(congNhan1.showInfo());
+    document.write("<br><br>");
+    document.write(congNhan2.showInfo());
+</script>
+</body>
+</html>

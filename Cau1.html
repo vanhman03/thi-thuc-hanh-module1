@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tính Trung Bình Cộng của các số chia hết cho 3</h1>
+<input type="text" id="arrayInput" placeholder="Nhập các số nguyên: " />
+<button onclick="calculateAverage()">Tính Trung Bình Cộng</button>
+<p id="result"></p>
+
+<script>
+    function calculateAverage() {
+        let input = document.getElementById('arrayInput').value;
+        let numbers = input.split(',').map(Number);
+
+        if (numbers.length > 50) {
+            document.getElementById('result').innerText = "Vui lòng nhập không quá 50 số.";
+            return;
+        }
+
+        if (numbers.length === 0) {
+            document.getElementById('result').innerText = "Vui lòng nhập ít nhất một số.";
+            return;
+        }
+
+        let sum = 0;
+        let count = 0;
+
+        for (let num of numbers) {
+            if (num % 3 === 0) {
+                sum += num;
+                count++;
+            }
+        }
+
+        let average = (count > 0) ? (sum / count) : 0;
+        document.getElementById('result').innerText = `Trung bình cộng các số chia hết cho 3 là: ${average}`;
+    }
+</script>
+</body>
+</html>
